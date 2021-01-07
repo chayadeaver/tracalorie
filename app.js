@@ -75,6 +75,14 @@ const App = (function(ItemCrl, UICtrl){
     document.querySelector(UISelectors.addBtn).addEventListener('click', itemAddSubmit)
   }
 
+  // Add item submit
+  const itemAddSubmit = function(e){
+    console.log('add')
+
+
+    e.preventDefault();
+  }
+
 
   // Public methods
   return {
@@ -85,6 +93,9 @@ const App = (function(ItemCrl, UICtrl){
 
       // Populate list with items
       UICtrl.populateItemList(items);
+
+      // Load event listeners
+      loadEventListeners();
     }
   }
 
