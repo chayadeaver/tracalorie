@@ -87,7 +87,11 @@ const App = (function(ItemCrl, UICtrl){
   const itemAddSubmit = function(e){
     // Get form input from UI Controller
     const input = UICtrl.getItemInput();
-
+    
+    // Check for name and calories
+    if(input.name !== '' && input.calories !== ''){
+      console.log(123)
+    }
 
     e.preventDefault();
   }
