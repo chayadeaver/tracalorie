@@ -1,5 +1,7 @@
 // Storage Controller
 
+
+
 // Item Controller
 const ItemCtrl = (function(){
   // Item Constructor
@@ -14,30 +16,48 @@ const ItemCtrl = (function(){
     items: [
       {id: 0, name: 'Steak Dinner', calories: 1200},
       {id: 1, name: 'Cookie', calories: 400},
-      {id: 2, name: 'Eggs', calories: 300},
+      {id: 2, name: 'Eggs', calories: 300}
     ],
     currentItem: null,
     totalCalories: 0
   }
 
+  // Public methods
   return {
+    getItems: function(){
+      return data.items;
+    },
+
     logData: function(){
       return data;
     }
   }
 })();
 
+
 // UI Controller
 const UICtrl = (function(){
   
+
+  // Public methods
+  return {
+
+  }
 })();
+
+
 // App Controller
 const App = (function(ItemCrl, UICtrl){
   
-
+  // Public methods
   return {
     init: function(){
-      console.log('Initializing App...')
+      
+      // fetch items from data structure
+      const items = ItemCtrl.getItems();
+
+      // Populate list with items
+      UICtrl.populateItemList(items);
     }
   }
 
