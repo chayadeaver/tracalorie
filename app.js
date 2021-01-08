@@ -212,6 +212,9 @@ const App = (function(ItemCrl, UICtrl){
       
       // Set current item
       ItemCtrl.setCurrentItem(itemToEdit);
+
+      // Add item to form
+      UICtrl.addItemToForm();
     }
 
     e.preventDefault();
