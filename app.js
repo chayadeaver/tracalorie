@@ -158,7 +158,6 @@ const UICtrl = (function(){
       document.querySelector(UISelectors.addBtn).style.display = 'inline';
     },
     showEditState: function(){
-      UICtrl.clearInput();
       document.querySelector(UISelectors.updateBtn).style.display = 'inline';
       document.querySelector(UISelectors.deleteBtn).style.display = 'inline';
       document.querySelector(UISelectors.backBtn).style.display = 'inline';
@@ -183,6 +182,9 @@ const App = (function(ItemCrl, UICtrl){
 
     // Edit icon click event
     document.querySelector(UISelectors.itemList).addEventListener('click', itemEditClick);
+
+    // Update item event
+    document.querySelector(UISelectors.updateBtn).addEventListener('click', itemUpdateSubmit);
   }
 
   // Add item submit
@@ -232,6 +234,13 @@ const App = (function(ItemCrl, UICtrl){
     }
 
     e.preventDefault();
+  }
+
+  // Update item submit
+  const itemUpdateSubmit = function(e) {
+    console.log('update')
+
+    e.preventDefault()
   }
 
 
